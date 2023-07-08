@@ -12,7 +12,10 @@
                 </li>
                 <li class="menu-title">Data Master</li>
                 <li>
-                    <a href="#" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Produk </span></a>
+                    <a href="#" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Produk (Alternatif) </span></a>
+                </li>
+                <li>
+                    <a href="#" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Kriteria </span></a>
                 </li>
                 <li class="menu-title">Peramalan</li>
                 <li>
@@ -24,8 +27,6 @@
                 <li>
                     <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-account-location"></i><span> Peramalan AHP <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                     <ul class="submenu">
-                        <li><a href="#">Alternatif</a></li>
-                        <li><a href="#">Kriteria</a></li>
                         <li><a href="#">Perbandingan Alternatif</a></li>
                         <li><a href="#">Perbandingan Kriteria</a></li>
                     </ul>
