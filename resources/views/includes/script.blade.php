@@ -14,3 +14,10 @@
 
 <!-- App js -->
 <script src="{{ asset('assets/js/app.js') }}"></script>
+
+<!-- Required datatable js -->
+<script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
+
+<!-- Datatable init js -->
+<script src="{{ asset('assets/pages/datatables.init.js') }}"></script>

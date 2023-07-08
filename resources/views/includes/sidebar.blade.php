@@ -12,7 +12,7 @@
                 </li>
                 <li class="menu-title">Data Master</li>
                 <li>
-                    <a href="#" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Produk (Alternatif) </span></a>
+                    <a href="{{ route('product.index') }}" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Produk (Alternatif) </span></a>
                 </li>
                 <li>
                     <a href="#" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Kriteria </span></a>
