@@ -33,7 +33,7 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>Alternatif</th>
+                                        <th>Variabel</th>
                                         <th>Code</th>
                                         <th>Produk</th>
                                         <th>Harga Satuan</th>
