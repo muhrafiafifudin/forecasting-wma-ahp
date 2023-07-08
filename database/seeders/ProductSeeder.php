@@ -18,7 +18,7 @@ class ProductSeeder extends Seeder
     {
         DB::table('products')->insert([
             [
-                'alternative' => 'A1',
+                'variable' => 'A1',
                 'code' => 'P001',
                 'product' => 'Sosis Ayam',
                 'price' => 5000,
@@ -29,7 +29,7 @@ class ProductSeeder extends Seeder
                 'created_at' => Carbon::now()
             ],
             [
-                'alternative' => 'A2',
+                'variable' => 'A2',
                 'code' => 'P002',
                 'product' => 'Bacon Razer',
                 'price' => 5000,
@@ -40,7 +40,7 @@ class ProductSeeder extends Seeder
                 'created_at' => Carbon::now()
             ],
             [
-                'alternative' => 'A3',
+                'variable' => 'A3',
                 'code' => 'P003',
                 'product' => 'Bakso Ayam',
                 'price' => 5000,
@@ -51,7 +51,7 @@ class ProductSeeder extends Seeder
                 'created_at' => Carbon::now()
             ],
             [
-                'alternative' => 'A4',
+                'variable' => 'A4',
                 'code' => 'P004',
                 'product' => 'Ham Slice',
                 'price' => 5000,
@@ -62,7 +62,7 @@ class ProductSeeder extends Seeder
                 'created_at' => Carbon::now()
             ],
             [
-                'alternative' => 'A5',
+                'variable' => 'A5',
                 'code' => 'P005',
                 'product' => 'Sosis Sapi',
                 'price' => 5000,

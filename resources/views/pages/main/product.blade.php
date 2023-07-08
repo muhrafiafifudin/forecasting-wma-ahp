@@ -49,7 +49,7 @@
                                     @foreach ($products as $product)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $product->alternative }}</td>
+                                            <td>{{ $product->variable }}</td>
                                             <td>{{ $product->code }}</td>
                                             <td>{{ $product->product }}</td>
                                             <td>{{ $product->price }}</td>
