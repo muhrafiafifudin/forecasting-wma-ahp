@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.dashboard');
 });
+
+// Product
+Route::group(['prefix' => 'produk', 'as' => 'product.'], function () {
+    Route::get('/', 'App\Http\Controllers\Main\ProductController@index')->name('index');
+    Route::post('/', 'App\Http\Controllers\Main\ProductController@store')->name('store');
+    Route::match(['put', 'patch'], '/{product}', 'App\Http\Controllers\Main\ProductController@update')->name('update');
+    Route::delete('/{product}', 'App\Http\Controllers\Main\ProductController@destroy')->name('destroy');
+});
