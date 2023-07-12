@@ -31,3 +31,6 @@ Route::group(['prefix' => 'kriteria', 'as' => 'criteria.'], function () {
     Route::match(['put', 'patch'], '/{criteria}', 'App\Http\Controllers\Main\CriteriaController@update')->name('update');
     Route::delete('/{product}', 'App\Http\Controllers\Main\CriteriaController@destroy')->name('destroy');
 });
+Route::group(['prefix' => 'peramalan-wma', 'as' => 'wma.'], function () {
+    Route::get('/penjualan-aktual', 'App\Http\Controllers\ForecastingWMA\ActualSaleController@index')->name('actual-sale');
+});
