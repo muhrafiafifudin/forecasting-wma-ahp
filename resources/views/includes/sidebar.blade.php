@@ -24,7 +24,7 @@
                         <li><a href="{{ route('wma.actual-sale') }}">Data Aktual</a></li>
                     </ul>
                     <ul class="submenu">
-                        <li><a href="#">Hasil</a></li>
+                        <li><a href="{{ route('wma.choose-period') }}">Hasil</a></li>
                     </ul>
                 </li>
                 <li>

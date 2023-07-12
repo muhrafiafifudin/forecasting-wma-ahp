@@ -28,4 +28,14 @@ class ActualSaleController extends Controller
 
         return view('pages.forecasting_wma.actual_sale', compact('products', 'actual_sales', 'filters'));
     }
+
+    public function period_forecasting(Request $request)
+    {
+        return view('pages.forecasting_wma.choose_period_wma');
+    }
+
+    public function result_wma()
+    {
+        return view('pages.forecasting_wma.result_wma', compact('products', 'actual_sales', 'filters'));
+    }
 }

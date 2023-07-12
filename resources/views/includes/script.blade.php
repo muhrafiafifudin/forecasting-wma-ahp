@@ -1,4 +1,7 @@
 <!-- jQuery  -->
+<script src="{{ asset('assets/js/script.js') }}"></script>
+
+<!-- jQuery  -->
 <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('assets/js/metisMenu.min.js') }}"></script>
@@ -21,3 +24,6 @@
 
 <!-- Datatable init js -->
 <script src="{{ asset('assets/pages/datatables.init.js') }}"></script>
+
+<!-- Select2 -->
+<script src="{{ asset('assets/plugins/select2/js/select2.min.js') }}"></script>
