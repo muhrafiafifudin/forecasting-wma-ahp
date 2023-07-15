@@ -1,52 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title> @yield('title') </title>
-        <meta content="Admin Dashboard" name="description" />
-        <meta content="Themesbrand" name="author" />
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+        <link rel="icon" href="../assets/img/icon.ico" type="image/x-icon"/>
+
+        <!-- Fonts and icons -->
+        <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+        <script>
+            WebFont.load({
+                google: {"families":["Open+Sans:300,400,600,700"]},
+                custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['../assets/css/fonts.css']},
+                active: function() {
+                    sessionStorage.fonts = true;
+                }
+            });
+        </script>
 
         @include('includes.style')
     </head>
-
     <body>
+        <div class="wrapper">
+            <div class="main-header" data-background-color="purple">
 
-        <!-- Begin page -->
-        <div id="wrapper">
+                @include('includes.header')
 
-            <!-- Top Bar Start -->
-            @include('includes.header')
-            <!-- Top Bar End -->
-
-            <!-- Left Sidebar Start -->
-            @include('includes.sidebar')
-            <!-- Left Sidebar End -->
-
-            <!-- ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
-            <div class="content-page">
-                <!-- Content Start -->
-                @yield('content')
-                <!-- Content End -->
-
-                @include('includes.footer')
             </div>
-            <!-- ============================================================== -->
-            <!-- End Right content here -->
-            <!-- ============================================================== -->
 
+            <!-- Sidebar -->
+            @include('includes.sidebar')
+            <!-- End Sidebar -->
+
+            <!-- Sidebar -->
+            @yield('content')
+            <!-- End Sidebar -->
         </div>
-        <!-- End page -->
 
         @include('includes.script')
 
         @stack('javascript')
 
     </body>
-
 </html>
