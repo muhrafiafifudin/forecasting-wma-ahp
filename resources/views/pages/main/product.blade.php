@@ -34,14 +34,53 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Produk</h4>
+                                <div class="d-flex align-items-center">
+                                    <h4 class="card-title">Produk</h4>
+                                    <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addProduct">
+                                        <i class="fa fa-plus"></i>
+                                        Tambah Produk
+                                    </button>
+                                </div>
+
+                                <div class="modal fade" id="addProduct" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header no-bd">
+                                                <h5 class="modal-title">
+                                                    <strong>
+                                                        Form Tambah Produk
+                                                    </strong>
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="variable">Variabel</label>
+                                                        <input type="text" class="form-control" name="variable" placeholder="Masukkan Variabel">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="criteria">Kriteria</label>
+                                                        <input type="text" class="form-control" name="criteria" placeholder="Masukkan Kriteria">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer no-bd">
+                                                <button type="button" id="addRowButton" class="btn btn-primary">Tambah</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table id="product-table" class="display table table-striped table-hover" >
                                         <thead>
                                             <tr>
-                                                <th>No.</th>
+                                                <th width="50px">No.</th>
                                                 <th>Variabel</th>
                                                 <th>Code</th>
                                                 <th>Produk</th>
@@ -50,7 +89,7 @@
                                                 <th>Stok</th>
                                                 <th>Penjualan Aktual</th>
                                                 <th>Peramalan</th>
-                                                <th>Aksi</th>
+                                                <th width="50px">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -66,7 +105,16 @@
                                                     <td>{{ $product->stock }}</td>
                                                     <td>{{ $product->actual_sale }}</td>
                                                     <td>{{ $product->forecasting }}</td>
-                                                    <td>Aksi</td>
+                                                    <td>
+                                                        <div class="form-button-action">
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
+																<i class="fa fa-edit"></i>
+															</button>
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+																<i class="fa fa-times"></i>
+															</button>
+														</div>
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
