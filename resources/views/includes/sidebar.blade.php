@@ -98,7 +98,7 @@
                     <div class="collapse" id="forecastingAHP">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="tables/tables.html">
+                                <a href="#">
                                     <span class="sub-item">Pembobotan</span>
                                 </a>
                             </li>
@@ -112,7 +112,7 @@
                     <h4 class="text-section">Laporan</h4>
                 </li>
                 <li class="nav-item">
-                    <a href="index.html">
+                    <a href="#">
                         <i class="fa fa-file" aria-hidden="true"></i>
                         <p>Hasil</p>
                     </a>

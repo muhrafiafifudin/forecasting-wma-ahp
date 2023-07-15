@@ -43,6 +43,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => 'peramalan-wma', 'as' => 'wma.'], function () {
         Route::get('/penjualan-aktual', 'App\Http\Controllers\ForecastingWMA\ActualSaleController@index')->name('actual-sale');
         Route::get('/pilih-periode', 'App\Http\Controllers\ForecastingWMA\ActualSaleController@period_forecasting')->name('choose-period');
-        Route::get('/hasil-akhir', 'App\Http\Controllers\ForecastingWMA\ActualSaleController@result_wma')->name('result-wma');
+        Route::post('/hasil-akhir', 'App\Http\Controllers\ForecastingWMA\ActualSaleController@result_wma')->name('result-wma');
     });
 });
