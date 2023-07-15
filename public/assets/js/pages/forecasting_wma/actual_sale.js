@@ -1,0 +1,1 @@
+$("#actual-sale-table").DataTable();
