@@ -102,7 +102,7 @@
                                                             @method('DELETE')
 
                                                             <div class="form-button-action">
-                                                                <a href="#" class="btn btn-link btn-primary btn-lg" data-toggle="modal" data-target="#editCriteria_{{ $criteria->id }}">
+                                                                <a href="#" class="btn btn-link btn-primary" data-toggle="modal" data-target="#editCriteria_{{ $criteria->id }}">
                                                                     <i class="fa fa-edit"></i>
                                                                 </a>
 

@@ -45,32 +45,59 @@
                                 <div class="modal fade" id="addProduct" tabindex="-1" role="dialog" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
-                                            <div class="modal-header no-bd">
-                                                <h5 class="modal-title">
-                                                    <strong>
-                                                        Form Tambah Produk
-                                                    </strong>
-                                                </h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form>
+                                            <form action="{{ route('product.store') }}" method="POST">
+                                                @csrf
+                                                @method('POST')
+
+                                                <div class="modal-header no-bd">
+                                                    <h5 class="modal-title">
+                                                        <strong>
+                                                            Form Tambah Produk
+                                                        </strong>
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
                                                     <div class="form-group">
                                                         <label for="variable">Variabel</label>
                                                         <input type="text" class="form-control" name="variable" placeholder="Masukkan Variabel">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="criteria">Kriteria</label>
-                                                        <input type="text" class="form-control" name="criteria" placeholder="Masukkan Kriteria">
+                                                        <label for="criteria">Kode</label>
+                                                        <input type="text" class="form-control" name="code" placeholder="Masukkan Kode">
                                                     </div>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer no-bd">
-                                                <button type="button" id="addRowButton" class="btn btn-primary">Tambah</button>
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                            </div>
+                                                    <div class="form-group">
+                                                        <label for="criteria">Produk</label>
+                                                        <input type="text" class="form-control" name="product" placeholder="Masukkan Produk">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="criteria">Harga</label>
+                                                        <input type="number" class="form-control" name="price" placeholder="Masukkan Harga">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="criteria">Tanggal Kadaluarsa</label>
+                                                        <input type="date" class="form-control" name="exp_date" placeholder="Masukkan Tanggal Kadaluarsa">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="criteria">Stok</label>
+                                                        <input type="number" class="form-control" name="stock" placeholder="Masukkan Stok">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="criteria">Penjualan Aktual</label>
+                                                        <input type="number" class="form-control" name="actual_sale" placeholder="Masukkan Penjualan Aktual">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="criteria">Peramalan</label>
+                                                        <input type="number" class="form-control" name="forecasting" placeholder="Masukkan Peramalan">
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer no-bd">
+                                                    <button type="submit" id="addRowButton" class="btn btn-primary">Tambah</button>
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -106,19 +133,87 @@
                                                     <td>{{ $product->actual_sale }}</td>
                                                     <td>{{ $product->forecasting }}</td>
                                                     <td>
-                                                        <div class="form-button-action">
-															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
-																<i class="fa fa-edit"></i>
-															</button>
-															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
-																<i class="fa fa-times"></i>
-															</button>
-														</div>
+                                                        <form action="{{ route('product.destroy', \Crypt::encrypt($product->id)) }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+
+                                                            <div class="form-button-action">
+                                                                <a href="#" class="btn btn-link btn-primary" data-toggle="modal" data-target="#editProduct_{{ $product->id }}">
+                                                                    <i class="fa fa-edit"></i>
+                                                                </a>
+
+                                                                <button type="submit" class="btn btn-link btn-danger">
+                                                                    <i class="fa fa-times"></i>
+                                                                </button>
+                                                            </div>
+                                                        </form>
                                                     </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
+
+                                    @foreach ($products as $product)
+                                        <div class="modal fade" id="editProduct_{{ $product->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <form action="{{ route('product.update', \Crypt::encrypt($product->id)) }}" method="POST">
+                                                        @csrf
+                                                        @method('PUT')
+
+                                                        <div class="modal-header no-bd">
+                                                            <h5 class="modal-title">
+                                                                <strong>
+                                                                    Form Ubah Produk
+                                                                </strong>
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="form-group">
+                                                                <label for="variable">Variabel</label>
+                                                                <input type="text" class="form-control" name="variable" value="{{ $product->variable }}" placeholder="Masukkan Variabel">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="criteria">Kode</label>
+                                                                <input type="text" class="form-control" name="code" value="{{ $product->code }}" placeholder="Masukkan Kode">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="criteria">Produk</label>
+                                                                <input type="text" class="form-control" name="product" value="{{ $product->product }}" placeholder="Masukkan Produk">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="criteria">Harga</label>
+                                                                <input type="number" class="form-control" name="price" value="{{ $product->price }}" placeholder="Masukkan Harga">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="criteria">Tanggal Kadaluarsa</label>
+                                                                <input type="date" class="form-control" name="exp_date" value="{{ $product->exp_date }}" placeholder="Masukkan Tanggal Kadaluarsa">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="criteria">Stok</label>
+                                                                <input type="number" class="form-control" name="stock" value="{{ $product->stock }}" placeholder="Masukkan Stok">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="criteria">Penjualan Aktual</label>
+                                                                <input type="number" class="form-control" name="actual_sale" value="{{ $product->actual_sale }}" placeholder="Masukkan Penjualan Aktual">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="criteria">Peramalan</label>
+                                                                <input type="number" class="form-control" name="forecasting" value="{{ $product->forecasting }}" placeholder="Masukkan Peramalan">
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer no-bd">
+                                                            <button type="submit" class="btn btn-primary">Ubah</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -131,4 +226,20 @@
 
 @push('javascript')
     <script src="{{ asset('assets/js/pages/main/product.js') }}"></script>
+
+    @if($message = Session::get('success'))
+        <script type="text/javascript">
+            $(document).ready(function() {
+                toastr.success("{{ $message }}");
+            })
+        </script>
+    @endif
+
+    @if ($message = Session::get('error'))
+        <script type="text/javascript">
+            $(document).ready(function() {
+                toastr.error("{{ $message }}");
+            })
+        </script>
+    @endif
 @endpush
