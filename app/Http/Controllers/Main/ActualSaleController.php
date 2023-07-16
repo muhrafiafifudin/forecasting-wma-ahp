@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Main;
 use App\Models\Product;
 use App\Models\ActualSale;
 use Illuminate\Http\Request;
+use App\Models\WMAForecasting;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Crypt;
 
@@ -39,6 +40,19 @@ class ActualSaleController extends Controller
                 $actual_sale->update();
             } else {
                 $actual_sale = new ActualSale();
+                $actual_sale->product_id = $request->product_id;
+                $actual_sale->month = $request->month;
+                $actual_sale->year = $request->year;
+                $actual_sale->stock = $request->stock;
+                $actual_sale->save();
+            }
+
+            if (WMAForecasting::where([['product_id', $request->product_id], ['month', $request->month], ['year', $request->year]])->exists()) {
+                $actual_sale = WMAForecasting::where([['product_id', $request->product_id], ['month', $request->month], ['year', $request->year]])->first();
+                $actual_sale->stock = $request->stock;
+                $actual_sale->update();
+            } else {
+                $actual_sale = new WMAForecasting();
                 $actual_sale->product_id = $request->product_id;
                 $actual_sale->month = $request->month;
                 $actual_sale->year = $request->year;
