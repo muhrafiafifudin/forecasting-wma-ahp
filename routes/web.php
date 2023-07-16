@@ -39,6 +39,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::match(['put', 'patch'], '/{criteria}', 'App\Http\Controllers\Main\CriteriaController@update')->name('update');
         Route::delete('/{product}', 'App\Http\Controllers\Main\CriteriaController@destroy')->name('destroy');
     });
+    // Actual Sale
+    Route::group(['prefix' => 'penjualan-aktual', 'as' => 'actual-sale.'], function () {
+        Route::get('/', 'App\Http\Controllers\Main\ActualSaleController@index')->name('index');
+        Route::post('/', 'App\Http\Controllers\Main\ActualSaleController@changeData')->name('change-data');
+    });
     // Forecasting WMA
     Route::group(['prefix' => 'peramalan-wma', 'as' => 'wma.'], function () {
         Route::get('/penjualan-aktual', 'App\Http\Controllers\ForecastingWMA\ActualSaleController@index')->name('actual-sale');

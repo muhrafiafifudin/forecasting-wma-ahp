@@ -37,7 +37,7 @@
                                 <div class="d-flex align-items-center">
                                     <h4 class="card-title">Kriteria</h4>
                                     <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addCriteria">
-                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-plus mr-2"></i>
                                         Tambah Kriteria
                                     </button>
 

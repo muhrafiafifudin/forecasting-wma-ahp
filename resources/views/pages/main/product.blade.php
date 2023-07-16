@@ -37,7 +37,7 @@
                                 <div class="d-flex align-items-center">
                                     <h4 class="card-title">Produk</h4>
                                     <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addProduct">
-                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-plus mr-2"></i>
                                         Tambah Produk
                                     </button>
                                 </div>

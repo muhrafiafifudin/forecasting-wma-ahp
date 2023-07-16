@@ -40,6 +40,12 @@
                         <p>Kriteria</p>
                     </a>
                 </li>
+                <li class="nav-item {{ request()->is('penjualan-aktual') ? 'active' : '' }}">
+                    <a href="{{ route('actual-sale.index') }}">
+                        <i class="fas fa-th-list"></i>
+                        <p>Penjualan Aktual</p>
+                    </a>
+                </li>
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
