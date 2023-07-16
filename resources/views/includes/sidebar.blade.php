@@ -52,20 +52,20 @@
                     </span>
                     <h4 class="text-section">Peramalan</h4>
                 </li>
-                <li class="nav-item {{ request()->is('peramalan-wma/penjualan-aktual', 'peramalan-wma/pilih-periode') ? 'active submenu' : '' }}">
+                <li class="nav-item {{ request()->is('peramalan-wma/data-ramal', 'peramalan-wma/pilih-periode', 'peramalan-wma/hasil-akhir') ? 'active submenu' : '' }}">
                     <a data-toggle="collapse" href="#forecastingWMA">
                         <i class="fas fa-layer-group"></i>
                         <p>Peramalan WMA</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse {{ request()->is('peramalan-wma/penjualan-aktual', 'peramalan-wma/pilih-periode') ? 'show' : '' }}" id="forecastingWMA">
+                    <div class="collapse {{ request()->is('peramalan-wma/data-ramal', 'peramalan-wma/pilih-periode', 'peramalan-wma/hasil-akhir') ? 'show' : '' }}" id="forecastingWMA">
                         <ul class="nav nav-collapse">
-                            <li class="{{ request()->is('peramalan-wma/penjualan-aktual') ? 'active' : '' }}">
+                            <li class="{{ request()->is('peramalan-wma/data-ramal') ? 'active' : '' }}">
                                 <a href="{{ route('wma.actual-sale') }}">
-                                    <span class="sub-item">Data Aktual</span>
+                                    <span class="sub-item">Data Ramal</span>
                                 </a>
                             </li>
-                            <li class="{{ request()->is('peramalan-wma/pilih-periode') ? 'active' : '' }}">
+                            <li class="{{ request()->is('peramalan-wma/pilih-periode', 'peramalan-wma/hasil-akhir') ? 'active' : '' }}">
                                 <a href="{{ route('wma.choose-period') }}">
                                     <span class="sub-item">Peramalan</span>
                                 </a>

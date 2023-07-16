@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Penjualan Aktual
+    Data Peramalan WMA
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
         <div class="content">
             <div class="page-inner">
                 <div class="page-header">
-                    <h4 class="page-title">Penjualan Aktual</h4>
+                    <h4 class="page-title">Data Peramalan WMA</h4>
                     <ul class="breadcrumbs">
                         <li class="nav-home">
                             <a href="#">
@@ -34,7 +34,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Penjualan Aktual</h4>
+                                <h4 class="card-title">Data Peramalan WMA</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">

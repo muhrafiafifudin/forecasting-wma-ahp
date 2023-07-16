@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ProductSeeder::class);
         $this->call(CriteriaSeeder::class);
         $this->call(ActualSaleSeeder::class);
+        $this->call(WMAForecastingSeeder::class);
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
     }
