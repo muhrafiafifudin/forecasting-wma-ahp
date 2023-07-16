@@ -5,5 +5,5 @@
 <!-- CSS Just for demo purpose, don't include it in your project -->
 <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}">
 
-<!-- Select2 -->
-{{-- <script src="{{ asset('assets/js/plugin/select2/select2.min.css') }}"></script> --}}
+<!-- Toastr -->
+<link rel="stylesheet" href="{{ asset('assets/js/plugin/toastr/toastr.min.css') }}">

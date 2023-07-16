@@ -44,18 +44,21 @@
                                     <div class="modal fade" id="addCriteria" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
-                                                <div class="modal-header no-bd">
-                                                    <h5 class="modal-title">
-                                                        <strong>
-                                                            Form Tambah Kriteria
-                                                        </strong>
-                                                    </h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form>
+                                                <form action="{{ route('criteria.store') }}" method="POST">
+                                                    @csrf
+                                                    @method('POST')
+
+                                                    <div class="modal-header no-bd">
+                                                        <h5 class="modal-title">
+                                                            <strong>
+                                                                Form Tambah Kriteria
+                                                            </strong>
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
                                                         <div class="form-group">
                                                             <label for="variable">Variabel</label>
                                                             <input type="text" class="form-control" name="variable" placeholder="Masukkan Variabel">
@@ -64,12 +67,12 @@
                                                             <label for="criteria">Kriteria</label>
                                                             <input type="text" class="form-control" name="criteria" placeholder="Masukkan Kriteria">
                                                         </div>
-                                                    </form>
-                                                </div>
-                                                <div class="modal-footer no-bd">
-                                                    <button type="button" id="addRowButton" class="btn btn-primary">Tambah</button>
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                                </div>
+                                                    </div>
+                                                    <div class="modal-footer no-bd">
+                                                        <button type="submit" class="btn btn-primary">Tambah</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -94,19 +97,63 @@
                                                     <td>{{ $criteria->variable }}</td>
                                                     <td>{{ $criteria->criteria }}</td>
                                                     <td>
-                                                        <div class="form-button-action">
-															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
-																<i class="fa fa-edit"></i>
-															</button>
-															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
-																<i class="fa fa-times"></i>
-															</button>
-														</div>
+                                                        <form action="{{ route('criteria.destroy', \Crypt::encrypt($criteria->id)) }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+
+                                                            <div class="form-button-action">
+                                                                <a href="#" class="btn btn-link btn-primary btn-lg" data-toggle="modal" data-target="#editCriteria_{{ $criteria->id }}">
+                                                                    <i class="fa fa-edit"></i>
+                                                                </a>
+
+                                                                <button type="submit" class="btn btn-link btn-danger">
+                                                                    <i class="fa fa-times"></i>
+                                                                </button>
+                                                            </div>
+                                                        </form>
                                                     </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
+
+                                    @foreach ($criterias as $criteria)
+                                        <div class="modal fade" id="editCriteria_{{ $criteria->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <form action="{{ route('criteria.update', \Crypt::encrypt($criteria->id)) }}" method="POST">
+                                                        @csrf
+                                                        @method('PUT')
+
+                                                        <div class="modal-header no-bd">
+                                                            <h5 class="modal-title">
+                                                                <strong>
+                                                                    Form Ubah Kriteria
+                                                                </strong>
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="form-group">
+                                                                <label for="variable">Variabel</label>
+                                                                <input type="text" class="form-control" name="variable" value="{{ $criteria->variable }}" placeholder="Masukkan Variabel">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="criteria">Kriteria</label>
+                                                                <input type="text" class="form-control" name="criteria" value="{{ $criteria->criteria }}" placeholder="Masukkan Kriteria">
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer no-bd">
+                                                            <button type="submit" class="btn btn-primary">Ubah</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -119,4 +166,20 @@
 
 @push('javascript')
     <script src="{{ asset('assets/js/pages/main/criteria.js') }}"></script>
+
+    @if($message = Session::get('success'))
+        <script type="text/javascript">
+            $(document).ready(function() {
+                toastr.success("{{ $message }}");
+            })
+        </script>
+    @endif
+
+    @if ($message = Session::get('error'))
+        <script type="text/javascript">
+            $(document).ready(function() {
+                toastr.error("{{ $message }}");
+            })
+        </script>
+    @endif
 @endpush

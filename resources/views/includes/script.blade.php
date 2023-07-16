@@ -1,4 +1,7 @@
-<!--   Core JS Files   -->
+<!-- Javascript -->
+{{-- <script src="{{ asset('assets/js/script.js') }}"></script> --}}
+
+<!-- Core JS Files -->
 <script src="{{ asset('assets/js/core/jquery.3.2.1.min.js') }}"></script>
 <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
 <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
@@ -48,5 +51,5 @@
 <script src="{{ asset('assets/js/setting-demo.js') }}"></script>
 <script src="{{ asset('assets/js/demo.js') }}"></script>
 
-<!-- Select2 -->
-<script src="{{ asset('assets/js/plugin/select2/select2.full.min.js') }}"></script>
+<!-- Toastr -->
+<script src="{{ asset('assets/js/plugin/toastr/toastr.min.js') }}"></script>
