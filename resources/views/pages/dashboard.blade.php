@@ -23,8 +23,8 @@
                                     </div>
                                     <div class="col col-stats ml-3 ml-sm-0">
                                         <div class="numbers">
-                                            <p class="card-category">Visitors</p>
-                                            <h4 class="card-title">1,294</h4>
+                                            <p class="card-category">User</p>
+                                            <h4 class="card-title">{{ $users }}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -42,8 +42,8 @@
                                     </div>
                                     <div class="col col-stats ml-3 ml-sm-0">
                                         <div class="numbers">
-                                            <p class="card-category">Subscribers</p>
-                                            <h4 class="card-title">1303</h4>
+                                            <p class="card-category">Produk</p>
+                                            <h4 class="card-title">{{ $products }}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -61,8 +61,8 @@
                                     </div>
                                     <div class="col col-stats ml-3 ml-sm-0">
                                         <div class="numbers">
-                                            <p class="card-category">Sales</p>
-                                            <h4 class="card-title">$ 1,345</h4>
+                                            <p class="card-category">Kriteria</p>
+                                            <h4 class="card-title">{{ $criterias }}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -80,8 +80,8 @@
                                     </div>
                                     <div class="col col-stats ml-3 ml-sm-0">
                                         <div class="numbers">
-                                            <p class="card-category">Order</p>
-                                            <h4 class="card-title">576</h4>
+                                            <p class="card-category">Data Aktual</p>
+                                            <h4 class="card-title">{{ $actual_sales }}</h4>
                                         </div>
                                     </div>
                                 </div>
