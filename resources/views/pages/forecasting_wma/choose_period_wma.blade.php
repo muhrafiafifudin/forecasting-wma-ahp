@@ -80,7 +80,7 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-2">
-                                            <button type="submit" class="btn btn-success">Submit</button>
+                                            <button type="submit" class="btn btn-secondary">Lakukan Peramalan</button>
                                         </div>
                                         <div class="col-lg-1"></div>
                                     </div>
