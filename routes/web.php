@@ -50,4 +50,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/pilih-periode', 'App\Http\Controllers\Forecasting\WMAController@period_forecasting')->name('choose-period');
         Route::post('/hasil-akhir', 'App\Http\Controllers\Forecasting\WMAController@result_wma')->name('result-wma');
     });
+    // Forecasting AHP
+    Route::group(['prefix' => 'pembobotan-ahp', 'as' => 'ahp.'], function () {
+        Route::get('/', 'App\Http\Controllers\Forecasting\AHPController@index')->name('index');
+        Route::post('/', 'App\Http\Controllers\Forecasting\AHPController@store')->name('store');
+    });
 });

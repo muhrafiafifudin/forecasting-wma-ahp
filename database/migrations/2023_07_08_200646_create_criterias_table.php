@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('variable');
             $table->string('criteria');
+            $table->decimal('result_pv', 10, 6)->nullable();
             $table->timestamps();
         });
     }

@@ -73,16 +73,16 @@
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ request()->is('pembobotan-ahp') ? 'active submenu' : '' }}">
                     <a data-toggle="collapse" href="#forecastingAHP">
                         <i class="fas fa-layer-group"></i>
                         <p>Pembobotan AHP</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="forecastingAHP">
+                    <div class="collapse {{ request()->is('pembobotan-ahp') ? 'show' : '' }}" id="forecastingAHP">
                         <ul class="nav nav-collapse">
-                            <li>
-                                <a href="#">
+                            <li class="{{ request()->is('pembobotan-ahp') ? 'active' : '' }}">
+                                <a href="{{ route('ahp.index') }}">
                                     <span class="sub-item">Pembobotan</span>
                                 </a>
                             </li>

@@ -38,23 +38,38 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table id="actual-sale-table" class="display table table-striped table-hover" >
-                                        <thead>
-                                            <tr>
-                                                <th>No.</th>
-                                                <th>Kriteria</th>
-                                                <th>Nilai Perbandingan</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @php $no = 1; @endphp
-                                            @foreach ($criterias as $criteria)
+                                    <form action="{{ route('ahp.store') }}" method="POST">
+                                        @csrf
+                                        @method('POST')
+
+                                        <table id="ahp-weighting-table" class="display table table-striped table-hover" >
+                                            <thead>
                                                 <tr>
-                                                    <td></td>
+                                                    <th colspan="2">Kriteria</th>
+                                                    <th>Nilai Perbandingan</th>
                                                 </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+                                            </thead>
+                                            <tbody>
+                                                @php $no = 0; $count_criteria = count($criterias); @endphp
+                                                    @for ($x=0; $x <= ($count_criteria - 2); $x++)
+                                                        @for ($y=($x+1); $y <= ($count_criteria - 1) ; $y++)
+                                                            @php $no++ @endphp
+                                                            <tr>
+                                                                <td>{{ $ahp_weighting[$x] }}</td>
+                                                                <td>{{ $ahp_weighting[$y] }}</td>
+                                                                <td>
+                                                                    <input type="number" step="any" class="form-control" name="weighting_{{ $no }}" placeholder="Masukkan Bobot" required>
+                                                                </td>
+                                                            </tr>
+                                                        @endfor
+                                                    @endfor
+                                            </tbody>
+                                        </table>
+
+                                        <div class="text-center mt-5">
+                                            <button type="submit" class="btn btn-secondary">Lakukan Pembobotan</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -66,5 +81,5 @@
 @endsection
 
 @push('javascript')
-    <script src="{{ asset('assets/js/pages/forecasting_wma/actual_sale.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/forecasting_ahp/ahp_weighting.js') }}"></script>
 @endpush
