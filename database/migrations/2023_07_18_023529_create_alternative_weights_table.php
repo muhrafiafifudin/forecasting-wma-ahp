@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('alternative_weights', function (Blueprint $table) {
             $table->id();
             $table->integer('weight');
-            $table->integer('product_id');
             $table->integer('criteria_id');
+            $table->integer('product_id');
             $table->timestamps();
         });
     }
