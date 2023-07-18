@@ -44,6 +44,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/', 'App\Http\Controllers\Main\ActualSaleController@index')->name('index');
         Route::post('/', 'App\Http\Controllers\Main\ActualSaleController@changeData')->name('change-data');
     });
+    // Alternative Weight
+    Route::group(['prefix' => 'bobot-alternatif', 'as' => 'alternative-weight.'], function () {
+        Route::get('/', 'App\Http\Controllers\Main\AlternativeWeightController@index')->name('index');
+        Route::post('/', 'App\Http\Controllers\Main\AlternativeWeightController@changeData')->name('change-data');
+    });
     // Forecasting WMA
     Route::group(['prefix' => 'peramalan-wma', 'as' => 'wma.'], function () {
         Route::get('/data-ramal', 'App\Http\Controllers\Forecasting\WMAController@index')->name('actual-sale');

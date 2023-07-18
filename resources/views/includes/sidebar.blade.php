@@ -46,6 +46,12 @@
                         <p>Penjualan Aktual</p>
                     </a>
                 </li>
+                <li class="nav-item {{ request()->is('bobot-alternatif') ? 'active' : '' }}">
+                    <a href="{{ route('alternative-weight.index') }}">
+                        <i class="fas fa-th-list"></i>
+                        <p>Nilai Bobot Alternatif</p>
+                    </a>
+                </li>
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>

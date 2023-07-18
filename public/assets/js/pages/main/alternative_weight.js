@@ -1,0 +1,1 @@
+$("#alternative-weight-table").DataTable();
