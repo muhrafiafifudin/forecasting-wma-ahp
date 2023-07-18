@@ -12,4 +12,13 @@ class AlternativeWeight extends Model
     protected $table = 'alternative_weights';
 
     protected $guarded = [];
+
+    public function product()
+    {
+        return $this->hasMany(Product::class, 'product_id', 'id');
+    }
+    public function criteria()
+    {
+        return $this->belongsTo(Criteria::class);
+    }
 }

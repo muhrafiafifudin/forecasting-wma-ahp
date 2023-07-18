@@ -18,24 +18,43 @@ class ResultController extends Controller
         $alternative_weight = AlternativeWeight::all();
 
         $products = Product::all();
+
+        foreach ($products as $product) {
+            $listVar[] = $product->variable;
+            $listName[] = $product->product;
+        }
+
         $count_product = count($products);
 
         $result = [];
-
-        // foreach ($products as $product) {
-        //     foreach ($criterias as $criteria) {
-        //         $result[$product->]
-        //     }
-        // }
+        $sum_result = [];
+        $rank_sum_result = [];
 
         for ($x=0; $x < $count_product; $x++) {
             for ($y=0; $y < $count_criteria; $y++) {
-                $result[$x][$y] = 1;
+                $alternative_weight = AlternativeWeight::where([['product_id', ($x+1)], ['criteria_id', ($y+1)]])->value('weight');
+
+                $criteria = AlternativeWeight::where([['product_id', ($x+1)], ['criteria_id', ($y+1)]])->first();
+                $criteria = $criteria->criteria->result_pv;
+
+                $result[$x][$y] = $alternative_weight * $criteria;
             }
+
+            $sum_result[] = array_sum($result[$x]) / $count_criteria;
+            $rank_sum_result[] = array_sum($result[$x]) / $count_criteria;
         }
 
-        dd($result);
+        rsort($rank_sum_result);
 
-        return view('pages.result.result', compact('criterias', 'count_criteria', 'products'));
+        $ranking = [];
+
+        foreach ($rank_sum_result as $key => $value) {
+            $ranking[$key] = [
+                'value' => $value,
+                'rank' => array_search($value, $sum_result) + 1
+            ];
+        }
+
+        return view('pages.result.result', compact('listVar', 'listName', 'criterias', 'count_criteria', 'products', 'count_product', 'result', 'sum_result', 'ranking'));
     }
 }

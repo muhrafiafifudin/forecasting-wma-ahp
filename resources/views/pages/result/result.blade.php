@@ -56,21 +56,24 @@
                                             </tr>
                                             <tr>
                                                 @foreach ($criterias as $criteria)
-                                                    <th>{{ $criteria->result_pv }}</th>
+                                                    <th>{{ round($criteria->result_pv, 5) }}</th>
                                                 @endforeach
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>(A1)</td>
-                                                <td>Sosis Ayam</td>
-                                                <td>2,306031</td>
-                                                <td>2,306031</td>
-                                                <td>2,306031</td>
-                                                <td>2,306031</td>
-                                                <td>2,306031</td>
-                                                <td>2</td>
-                                            </tr>
+                                            @for ($x=0; $x < $count_product; $x++)
+                                                <tr>
+                                                    <td>{{ $listVar[$x] }}</td>
+                                                    <td>{{ $listName[$x] }}</td>
+
+                                                    @for ($y=0; $y < $count_criteria; $y++)
+                                                        <td>{{ round($result[$x][$y], 5) }}</td>
+                                                    @endfor
+
+                                                    <td>{{ $sum_result[$x] }}</td>
+                                                    <td>{{ $ranking[$x]['rank'] }}</td>
+                                                </tr>
+                                            @endfor
                                         </tbody>
                                     </table>
                                 </div>
