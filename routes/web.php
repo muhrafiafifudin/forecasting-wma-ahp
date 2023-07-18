@@ -60,4 +60,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/', 'App\Http\Controllers\Forecasting\AHPController@index')->name('index');
         Route::post('/', 'App\Http\Controllers\Forecasting\AHPController@store')->name('store');
     });
+    // Result AHP - WMA
+    Route::group(['prefix' => 'proses-wma-ahp', 'as' => 'wma-ahp.'], function () {
+        Route::get('/', 'App\Http\Controllers\Result\ResultController@index')->name('index');
+    });
 });

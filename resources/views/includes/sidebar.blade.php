@@ -99,12 +99,12 @@
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
                     </span>
-                    <h4 class="text-section">Laporan</h4>
+                    <h4 class="text-section">Hasil</h4>
                 </li>
-                <li class="nav-item">
-                    <a href="#">
+                <li class="nav-item {{ request()->is('proses-wma-ahp') ? 'active' : '' }}">
+                    <a href="{{ route('wma-ahp.index') }}">
                         <i class="fa fa-file" aria-hidden="true"></i>
-                        <p>Hasil</p>
+                        <p>Proses WMA - AHP</p>
                     </a>
                 </li>
             </ul>
