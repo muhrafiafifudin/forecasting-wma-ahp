@@ -1,0 +1,1 @@
+$("#forecast-data-table").DataTable();
