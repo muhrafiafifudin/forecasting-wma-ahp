@@ -149,5 +149,21 @@
 @endsection
 
 @push('javascript')
-    <script src="{{ asset('assets/js/pages/forecasting_wma/actual_sale.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/main/actual_sale.js') }}"></script>
+
+    @if($message = Session::get('success'))
+        <script type="text/javascript">
+            $(document).ready(function() {
+                toastr.success("{{ $message }}");
+            })
+        </script>
+    @endif
+
+    @if ($message = Session::get('error'))
+        <script type="text/javascript">
+            $(document).ready(function() {
+                toastr.error("{{ $message }}");
+            })
+        </script>
+    @endif
 @endpush
