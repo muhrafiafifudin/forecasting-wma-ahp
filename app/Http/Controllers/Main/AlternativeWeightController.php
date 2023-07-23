@@ -15,6 +15,15 @@ class AlternativeWeightController extends Controller
         $criterias = Criteria::all();
         $alternative_weight_distinct = AlternativeWeight::distinct()->get(['weight']);
         $products = Product::all();
+        $product_count = Product::count();
+
+        $weights = [];
+
+        for ($i=1; $i <= $product_count; $i++) {
+            $weights[] = $i;
+        }
+
+        rsort($weights);
 
         $alternative_weight = [];
 
@@ -29,7 +38,7 @@ class AlternativeWeightController extends Controller
             }
         }
 
-        return view('pages.main.alternative_weight', compact('criterias', 'alternative_weight', 'alternative_weight_distinct', 'products'));
+        return view('pages.main.alternative_weight', compact('criterias', 'alternative_weight', 'alternative_weight_distinct', 'products', 'weights'));
     }
 
     public function changeData(Request $request)

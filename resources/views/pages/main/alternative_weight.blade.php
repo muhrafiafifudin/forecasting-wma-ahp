@@ -63,8 +63,8 @@
                                                             <label for="weight">Bobot</label>
                                                             <select name="weight" class="form-control">
                                                                 <option value="">Pilih Bobot</option>
-                                                                @foreach ($alternative_weight_distinct as $data)
-                                                                    <option value="{{ $data->weight }}">{{ $data->weight }}</option>
+                                                                @foreach ($weights as $weight)
+                                                                    <option value="{{ $weight }}">{{ $weight }}</option>
                                                                 @endforeach
                                                             </select>
                                                         </div>
