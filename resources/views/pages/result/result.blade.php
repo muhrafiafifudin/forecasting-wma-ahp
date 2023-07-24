@@ -37,7 +37,7 @@
                                 <div class="d-flex align-items-center">
                                     <h4 class="card-title">Proses WMA - AHP</h4>
 
-                                    <a href="{{ route('wma-ahp.print-excel') }}" class="btn btn-primary btn-round ml-auto">
+                                    <a href="{{ route('wma-ahp.print-excel') }}" target="_blank" class="btn btn-primary btn-round ml-auto">
                                         Print Data
                                     </a>
                                 </div>

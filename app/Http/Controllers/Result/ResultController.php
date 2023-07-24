@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Result;
 
 use App\Models\Product;
 use App\Models\Criteria;
-use Illuminate\Http\Request;
 use App\Exports\ResultExport;
 use App\Models\AlternativeWeight;
 use App\Http\Controllers\Controller;
