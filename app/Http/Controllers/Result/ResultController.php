@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Result;
 use App\Models\Product;
 use App\Models\Criteria;
 use Illuminate\Http\Request;
+use App\Exports\ResultExport;
 use App\Models\AlternativeWeight;
 use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ResultController extends Controller
 {
@@ -56,5 +58,10 @@ class ResultController extends Controller
         }
 
         return view('pages.result.result', compact('listVar', 'listName', 'criterias', 'count_criteria', 'products', 'count_product', 'result', 'sum_result', 'ranking'));
+    }
+
+    public function print_excel()
+    {
+        return Excel::download(new ResultExport, 'Result.xlsx');
     }
 }

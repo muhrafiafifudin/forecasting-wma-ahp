@@ -63,5 +63,6 @@ Route::group(['middleware' => 'auth'], function () {
     // Result AHP - WMA
     Route::group(['prefix' => 'proses-wma-ahp', 'as' => 'wma-ahp.'], function () {
         Route::get('/', 'App\Http\Controllers\Result\ResultController@index')->name('index');
+        Route::get('/print-excel', 'App\Http\Controllers\Result\ResultController@print_excel')->name('print-excel');
     });
 });
