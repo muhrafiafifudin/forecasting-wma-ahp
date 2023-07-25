@@ -20,13 +20,13 @@
                             <i class="flaticon-right-arrow"></i>
                         </li>
                         <li class="nav-item">
-                            <a href="#">Tables</a>
+                            <a href="#">Pembobotan AHP</a>
                         </li>
                         <li class="separator">
                             <i class="flaticon-right-arrow"></i>
                         </li>
                         <li class="nav-item">
-                            <a href="#">Datatables</a>
+                            <a href="#">Pembobotan</a>
                         </li>
                     </ul>
                 </div>
