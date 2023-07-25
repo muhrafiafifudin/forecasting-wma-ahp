@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('stock');
             $table->integer('actual_sale');
             $table->integer('forecasting');
+            $table->tinyInteger('rank')->nullable();
             $table->timestamps();
         });
     }

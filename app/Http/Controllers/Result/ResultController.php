@@ -56,6 +56,11 @@ class ResultController extends Controller
             ];
         }
 
+        foreach ($products as $i => $product) {
+            $product->rank = $ranking[$i]['rank'];
+            $product->update();
+        }
+
         return view('pages.result.result', compact('listVar', 'listName', 'criterias', 'count_criteria', 'products', 'count_product', 'result', 'sum_result', 'ranking'));
     }
 
