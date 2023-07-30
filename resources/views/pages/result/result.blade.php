@@ -32,6 +32,11 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
+                        <div class="alert alert-primary" role="alert">
+                            Produk olahan dengan posisi peringkat tertinggi adalah produk memiliki bobot terbesar untuk segera di produksi
+                        </div>
+                    </div>
+                    <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
                                 <div class="d-flex align-items-center">

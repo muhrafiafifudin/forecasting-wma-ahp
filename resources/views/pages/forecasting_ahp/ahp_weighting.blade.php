@@ -32,6 +32,11 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
+                        <div class="alert alert-primary" role="alert">
+                            Masukan nilai pembobotan antar kriteria untuk melakukan perhitungan perbandingan matriks kriteria (Nilai tidak boleh minus)
+                        </div>
+                    </div>
+                    <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Pembobotan Kriteria</h4>
