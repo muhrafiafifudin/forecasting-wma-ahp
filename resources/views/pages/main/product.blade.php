@@ -84,14 +84,6 @@
                                                         <label for="criteria">Stok</label>
                                                         <input type="number" class="form-control" name="stock" placeholder="Masukkan Stok">
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="criteria">Penjualan Aktual</label>
-                                                        <input type="number" class="form-control" name="actual_sale" placeholder="Masukkan Penjualan Aktual">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="criteria">Peramalan</label>
-                                                        <input type="number" class="form-control" name="forecasting" placeholder="Masukkan Peramalan">
-                                                    </div>
                                                 </div>
                                                 <div class="modal-footer no-bd">
                                                     <button type="submit" id="addRowButton" class="btn btn-primary">Tambah</button>
@@ -114,8 +106,6 @@
                                                 <th>Harga Satuan</th>
                                                 <th>Kadaluarsa</th>
                                                 <th>Stok</th>
-                                                <th>Penjualan Aktual</th>
-                                                <th>Peramalan</th>
                                                 <th width="50px">Aksi</th>
                                             </tr>
                                         </thead>
@@ -130,8 +120,6 @@
                                                     <td>{{ $product->price }}</td>
                                                     <td>{{ $product->exp_date }}</td>
                                                     <td>{{ $product->stock }}</td>
-                                                    <td>{{ $product->actual_sale }}</td>
-                                                    <td>{{ $product->forecasting }}</td>
                                                     <td>
                                                         <form action="{{ route('product.destroy', \Crypt::encrypt($product->id)) }}" method="POST">
                                                             @csrf
@@ -195,14 +183,6 @@
                                                             <div class="form-group">
                                                                 <label for="criteria">Stok</label>
                                                                 <input type="number" class="form-control" name="stock" value="{{ $product->stock }}" placeholder="Masukkan Stok">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="criteria">Penjualan Aktual</label>
-                                                                <input type="number" class="form-control" name="actual_sale" value="{{ $product->actual_sale }}" placeholder="Masukkan Penjualan Aktual">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="criteria">Peramalan</label>
-                                                                <input type="number" class="form-control" name="forecasting" value="{{ $product->forecasting }}" placeholder="Masukkan Peramalan">
                                                             </div>
                                                         </div>
                                                         <div class="modal-footer no-bd">

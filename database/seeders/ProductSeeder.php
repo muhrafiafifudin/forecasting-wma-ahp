@@ -24,8 +24,6 @@ class ProductSeeder extends Seeder
                 'price' => 5000,
                 'exp_date' => Carbon::now(),
                 'stock' => 10,
-                'actual_sale' => 110,
-                'forecasting' => 120,
                 'created_at' => Carbon::now()
             ],
             [
@@ -35,8 +33,6 @@ class ProductSeeder extends Seeder
                 'price' => 5000,
                 'exp_date' => Carbon::now(),
                 'stock' => 10,
-                'actual_sale' => 110,
-                'forecasting' => 120,
                 'created_at' => Carbon::now()
             ],
             [
@@ -46,8 +42,6 @@ class ProductSeeder extends Seeder
                 'price' => 5000,
                 'exp_date' => Carbon::now(),
                 'stock' => 10,
-                'actual_sale' => 110,
-                'forecasting' => 120,
                 'created_at' => Carbon::now()
             ],
             [
@@ -57,8 +51,6 @@ class ProductSeeder extends Seeder
                 'price' => 5000,
                 'exp_date' => Carbon::now(),
                 'stock' => 10,
-                'actual_sale' => 110,
-                'forecasting' => 120,
                 'created_at' => Carbon::now()
             ],
             [
@@ -68,8 +60,6 @@ class ProductSeeder extends Seeder
                 'price' => 5000,
                 'exp_date' => Carbon::now(),
                 'stock' => 10,
-                'actual_sale' => 110,
-                'forecasting' => 120,
                 'created_at' => Carbon::now()
             ],
         ]);
