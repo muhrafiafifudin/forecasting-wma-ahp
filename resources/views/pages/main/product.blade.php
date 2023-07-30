@@ -20,13 +20,13 @@
                             <i class="flaticon-right-arrow"></i>
                         </li>
                         <li class="nav-item">
-                            <a href="#">Tables</a>
+                            <a href="#">Data Master</a>
                         </li>
                         <li class="separator">
                             <i class="flaticon-right-arrow"></i>
                         </li>
                         <li class="nav-item">
-                            <a href="#">Datatables</a>
+                            <a href="#">Produk</a>
                         </li>
                     </ul>
                 </div>
@@ -36,7 +36,7 @@
                             <div class="card-header">
                                 <div class="d-flex align-items-center">
                                     <h4 class="card-title">Produk</h4>
-                                    <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addProduct">
+                                    <button class="btn btn-secondary btn-round ml-auto" data-toggle="modal" data-target="#addProduct">
                                         <i class="fa fa-plus mr-2"></i>
                                         Tambah Produk
                                     </button>
