@@ -19,7 +19,7 @@
     </thead>
     <tbody>
         @php $no = 1; @endphp
-        @foreach ($products as $product)
+        @foreach ($products->sortBy('rank') as $product)
             <tr>
                 <td align="center" style="border: 1px solid black" valign="middle">{{ $no++ }}</td>
                 <td style="border: 1px solid black" valign="middle">{{ $product->product }}</td>
